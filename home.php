@@ -16,6 +16,8 @@ while (($row = oci_fetch_array($query, OCI_NUM)) != false)
 
 ?>
 
+<!--The HTML CODE-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -228,7 +230,7 @@ while (($row = oci_fetch_array($query, OCI_NUM)) != false)
                             <div class="count">9</div>
 
                             <h4> Registered Employees</h4>
-                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
+                            
                         </div>
                     </div>
                     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -238,7 +240,7 @@ while (($row = oci_fetch_array($query, OCI_NUM)) != false)
                             <div class="count"><?php echo ($no_of_clients); ?></div>
 
                             <h4>  Registered Clients</h4>
-                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
+                            
                         </div>
                     </div>
                     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -248,7 +250,7 @@ while (($row = oci_fetch_array($query, OCI_NUM)) != false)
                             <div class="count">179</div>
 
                             <h4> Registered Workers</h4>
-                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
+                           
                         </div>
                     </div>
                     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -258,7 +260,7 @@ while (($row = oci_fetch_array($query, OCI_NUM)) != false)
                             <div class="count">17</div>
 
                             <h4> Registered Contractors</h4>
-                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
+                           
                         </div>
                     </div>
                     <h4>Project Statistics</h4>
@@ -269,7 +271,7 @@ while (($row = oci_fetch_array($query, OCI_NUM)) != false)
                             <div class="count">17</div>
 
                             <h4> Registered Projects</h4>
-                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
+                          
                         </div>
                     </div>
                     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -279,7 +281,7 @@ while (($row = oci_fetch_array($query, OCI_NUM)) != false)
                             <div class="count">11</div>
 
                             <h4> Completed Projects</h4>
-                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
+                           
                         </div>
                     </div>
                     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -289,7 +291,7 @@ while (($row = oci_fetch_array($query, OCI_NUM)) != false)
                             <div class="count">7</div>
 
                             <h4> On-going Projects</h4>
-                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
+                            
                         </div>
                     </div>
                 </div>
@@ -1114,7 +1116,7 @@ $result = oci_execute($query);
 if($result)
 {
     $row = oci_num_rows($query);
-    echo "hello world";
+    
 }
 
 ?>
