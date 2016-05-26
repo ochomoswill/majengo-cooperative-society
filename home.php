@@ -5,6 +5,15 @@ session_start();
 
 include "database.php";
 
+$query = oci_parse($connect, "SELECT clientid FROM tblclients");
+oci_execute($query);
+$no_of_clients = 0;
+while (($row = oci_fetch_array($query, OCI_NUM)) != false)
+{
+    $no_of_clients ++;
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +67,7 @@ include "database.php";
             <div class="left_col scroll-view">
 
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="index2.html" class="site_title"><i class="fa fa-paw"></i> <span>Majengo Cooperative Society!</span></a>
+                    <a href="home.php" class="site_title"><!--<i class="fa fa-building-o"></i>--> <span> Majengo Cooperative!</span></a>
                 </div>
                 <div class="clearfix"></div>
 
@@ -66,7 +75,8 @@ include "database.php";
                 <!-- menu prile quick info -->
                 <div class="profile">
                     <div class="profile_pic">
-                        <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                        <img src="images/CD3.png" alt="..." class="img-circle profile_img">
+                        <br />
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
@@ -75,7 +85,8 @@ include "database.php";
                 </div>
                 <!-- /menu prile quick info -->
 
-                <br />
+
+
 
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -83,108 +94,68 @@ include "database.php";
                     <div class="menu_section">
                         <h3>General</h3>
                         <ul class="nav side-menu">
-                            <li><a href="index2.html"><i class="fa fa-home"></i> Home</a>
+                            <li><a href="home.php"><i class="fa fa-home"></i> Home</a>
                             </li>
-                            <li><a><i class="fa fa-edit"></i>Land Management<span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-tree"></i> Land Management<span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu" style="display: none">
-                                    <li><a href="#">Land Details</a>
+                                    <li><a href="landdetails.php">Land Details</a>
                                     </li>
-                                    <li><a href="#">Land Transactions</a>
+                                    <li><a href="landtranscations.php">Land Transactions</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-edit"></i>Construction <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-wrench"></i> Construction <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu" style="display: none">
-                                    <li><a href="employee.html">Employee Details</a>
+                                    <li><a href="employee.php">Employee Details</a>
                                     </li>
-                                    <li><a href="worker.html">Worker Details</a>
+                                    <li><a href="worker.php">Worker Details</a>
                                     </li>
-                                    <li><a href="contractor.html">Contractor Details</a>
+                                    <li><a href="contractor.php">Contractor Details</a>
                                     </li>
                                     <li><a href="client.php">Client Details</a>
                                     </li>
-                                    <li><a href="#">Project Details</a>
+                                    <li><a href="project.php">Project Details</a>
                                     </li>
                                     <li><a href="supplier.php">Supplier Details</a>
                                     </li>
-                                    <li><a href="#">Issuance of Equipment</a>
+                                    <li><a href="eqptissue.php">Issuance of Equipment</a>
                                     </li>
-                                    <li><a href="#">Issuance of Material</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-edit"></i>Property Management<span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu" style="display: none">
-                                    <li><a href="#">Client Details</a>
-                                    </li>
-                                    <li><a href="#">Tenant Details</a>
-                                    </li>
-                                    <li><a href="#">Lease Details</a>
+                                    <li><a href="mtrlissue.php">Issuance of Material</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-edit"></i>Dairy Management<span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-building-o"></i> Property Management<span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu" style="display: none">
-                                    <li><a href="#">Farmer Details</a>
+                                    <li><a href="clientproperty.php">Client Details</a>
                                     </li>
-                                    <li><a href="#">Factory Details</a>
+                                    <li><a href="tenant.php">Tenant Details</a>
                                     </li>
-                                    <li><a href="#">Market Agents</a>
-                                    </li>
-                                    <li><a href="#">Milk Details</a>
-                                    </li>
-                                    <li><a href="#">Farming Inputs</a>
-                                    </li>
-                                    <li><a href="#">Loans</a>
+                                    <li><a href="lease.php">Lease Details</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-coffee"></i> Dairy Management<span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu" style="display: none">
-                                    <li><a href="tables.html">Tables</a>
+                                    <li><a href="farmer.php">Farmer Details</a>
                                     </li>
-                                    <li><a href="tables_dynamic.html">Table Dynamic</a>
+                                    <li><a href="factory.php">Factory Details</a>
+                                    </li>
+                                    <li><a href="market.php">Market Agents</a>
+                                    </li>
+                                    <li><a href="milk.php">Milk Details</a>
+                                    </li>
+                                    <li><a href="farminputs.php">Farming Inputs</a>
+                                    </li>
+                                    <li><a href="loans.php">Loans</a>
                                     </li>
                                 </ul>
+                            </li>
+                            <li><a href = "map.php"><i class="fa fa-map-marker"></i> Map</a>
+
                             </li>
                         </ul>
                     </div>
-                    <!-- <div class="menu_section">
-                       <h3>Live On</h3>
-                       <ul class="nav side-menu">
-                         <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                           <ul class="nav child_menu" style="display: none">
-                             <li><a href="e_commerce.html">E-commerce</a>
-                             </li>
-                             <li><a href="projects.html">Projects</a>
-                             </li>
-                             <li><a href="project_detail.html">Project Detail</a>
-                             </li>
-                             <li><a href="contacts.html">Contacts</a>
-                             </li>
-                             <li><a href="profile.html">Profile</a>
-                             </li>
-                           </ul>
-                         </li>
-                         <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                           <ul class="nav child_menu" style="display: none">
-                             <li><a href="page_404.html">404 Error</a>
-                             </li>
-                             <li><a href="page_500.html">500 Error</a>
-                             </li>
-                             <li><a href="plain_page.html">Plain Page</a>
-                             </li>
-                             <li><a href="login.html">Login Page</a>
-                             </li>
-                             <li><a href="pricing_tables.html">Pricing Tables</a>
-                             </li>
 
-                           </ul>
-                         </li>
-                         <li><a><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a>
-                         </li>
-                       </ul>
-                     </div>-->
 
                 </div>
                 <!-- /sidebar menu -->
@@ -200,7 +171,7 @@ include "database.php";
                     <a data-toggle="tooltip" data-placement="top" title="Lock">
                         <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
                     </a>
-                    <a data-toggle="tooltip" data-placement="top" title="Logout">
+                    <a href="logout.php" data-toggle="tooltip" data-placement="top" title="Logout">
                         <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                     </a>
                 </div>
@@ -224,101 +195,22 @@ include "database.php";
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                                <li><a href="javascript:;">  Profile</a>
-                                </li>
+
+
                                 <li>
-                                    <a href="javascript:;">
-                                        <span class="badge bg-red pull-right">50%</span>
-                                        <span>Settings</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">Help</a>
+                                    <a href="about.php">About Us</a>
                                 </li>
                                 <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                                 </li>
                             </ul>
-                        </li>
 
-                        <li role="presentation" class="dropdown">
-                            <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-envelope-o"></i>
-                                <span class="badge bg-green">6</span>
-                            </a>
-                            <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="images/img.jpg" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="images/img.jpg" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="images/img.jpg" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="images/img.jpg" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="text-center">
-                                        <a>
-                                            <strong>See All Alerts</strong>
-                                            <i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
 
                     </ul>
                 </nav>
             </div>
 
         </div>
-        <!-- /top navigation -->
+<!-- /top navigation -->
 
 
         <!-- page content -->
@@ -328,44 +220,76 @@ include "database.php";
             <div class="">
 
                 <div class="row top_tiles">
+                    <h4>Registered Personnel</h4>
                     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="tile-stats">
-                            <div class="icon"><i class="fa fa-caret-square-o-right"></i>
+                            <div class="icon"><i class="fa fa-check-circle"></i>
                             </div>
-                            <div class="count">179</div>
+                            <div class="count">9</div>
 
-                            <h3>New Sign ups</h3>
-                            <p>Lorem ipsum psdea itgum rixt.</p>
+                            <h4> Registered Employees</h4>
+                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
                         </div>
                     </div>
                     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="tile-stats">
-                            <div class="icon"><i class="fa fa-comments-o"></i>
+                            <div class="icon"><i class="fa fa-check-circle"></i>
                             </div>
-                            <div class="count">179</div>
+                            <div class="count"><?php echo ($no_of_clients); ?></div>
 
-                            <h3>New Sign ups</h3>
-                            <p>Lorem ipsum psdea itgum rixt.</p>
+                            <h4>  Registered Clients</h4>
+                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
                         </div>
                     </div>
                     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="tile-stats">
-                            <div class="icon"><i class="fa fa-sort-amount-desc"></i>
+                            <div class="icon"><i class="fa fa-check-circle"></i>
                             </div>
                             <div class="count">179</div>
 
-                            <h3>New Sign ups</h3>
-                            <p>Lorem ipsum psdea itgum rixt.</p>
+                            <h4> Registered Workers</h4>
+                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
                         </div>
                     </div>
                     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="tile-stats">
-                            <div class="icon"><i class="fa fa-check-square-o"></i>
+                            <div class="icon"><i class="fa fa-check-circle"></i>
                             </div>
-                            <div class="count">179</div>
+                            <div class="count">17</div>
 
-                            <h3>New Sign ups</h3>
-                            <p>Lorem ipsum psdea itgum rixt.</p>
+                            <h4> Registered Contractors</h4>
+                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
+                        </div>
+                    </div>
+                    <h4>Project Statistics</h4>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon"><i class="fa fa-check-circle"></i>
+                            </div>
+                            <div class="count">17</div>
+
+                            <h4> Registered Projects</h4>
+                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
+                        </div>
+                    </div>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon"><i class="fa fa-dot-circle-o"></i>
+                            </div>
+                            <div class="count">11</div>
+
+                            <h4> Completed Projects</h4>
+                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
+                        </div>
+                    </div>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon"><i class="fa fa-circle-o"></i>
+                            </div>
+                            <div class="count">7</div>
+
+                            <h4> On-going Projects</h4>
+                            <!--<p>Lorem ipsum psdea itgum rixt.</p>-->
                         </div>
                     </div>
                 </div>
@@ -792,7 +716,7 @@ include "database.php";
             <!-- footer content -->
             <footer>
                 <div class="pull-right">
-                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                    <img src = "images/picsq.png" height="40" width = "40"> Majengo Cooperative Society by <img src = "images/ochomoswill3.png" height="40" width = "40"> <i>Ochomoswill Incorporated.</i></img>
                 </div>
                 <div class="clearfix"></div>
             </footer>
@@ -1180,3 +1104,17 @@ include "database.php";
 </body>
 
 </html>
+
+
+<?php
+
+$query = oci_parse($connect, "SELECT * FROM tblclients");
+$result = oci_execute($query);
+
+if($result)
+{
+    $row = oci_num_rows($query);
+    echo "hello world";
+}
+
+?>

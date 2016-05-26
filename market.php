@@ -213,7 +213,7 @@ include "database.php";
                 <div class="page-title">
                     <div class="title_left">
                         <h3>
-                            Supplier Details
+                            Market Agent Details
 
                         </h3>
                     </div>
@@ -227,7 +227,7 @@ include "database.php";
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Supplier Registration.<small></small></h2>
+                                <h2>Market Agents Registration Form.<small></small></h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -240,25 +240,27 @@ include "database.php";
                             <div class="x_content">
                                 <br />
 
-                                <!--Supplier form-->
-                                <form method="POST"  id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-                                    <div id="msgSubmit" class="h3 text-center hidden">Registration Successful!</div>
-
+                                <!--Farmer Registration form-->
+                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="supplier-id">Supplier ID <span class="required">*</span>
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="con-id">Agent ID<span class="required">*</span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="supplier-id" required="required" class="form-control col-md-7 col-xs-12">
+                                            <input type="text" id="con-id" required="required" class="form-control col-md-7 col-xs-12">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="supplier-name">Supplier Name <span class="required">*</span>
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="company-name">Agent Name<span class="required">*</span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="supplier-name" required="required" class="form-control col-md-7 col-xs-12">
+                                            <input type="text" id="company-name" required="required" class="form-control col-md-7 col-xs-12">
                                         </div>
                                     </div>
+
+
+
+
 
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ph-no">Phone Number <span class="required">*</span>
@@ -274,7 +276,12 @@ include "database.php";
                                             <input type="text" id="email" required="required" class="form-control col-md-7 col-xs-12">
                                         </div>
                                     </div>
-
+                                    <div class="form-group">
+                                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12"> Date Registered</label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                                        </div>
+                                    </div>
                                     <div class="ln_solid"></div>
                                     <div class="form-group">
                                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
@@ -286,160 +293,18 @@ include "database.php";
                                 </form>
                             </div>
                         </div>
-                        </div>
-                        <!--End of supplier registration -->
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Material Supply.<small></small></h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-
-                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-                                    <br />
-
-                                    <!--Client Registration form-->
-                                    <form method="POST"  id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-                                        <div id="msgSubmit" class="h3 text-center hidden">Registration Successful!</div>
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="supplier-id">Supplier Name <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" id="supplier-id" required="required" class="form-control col-md-7 col-xs-12">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="supplier-name">Material ID <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="number" id="materialid" required="required" class="form-control col-md-7 col-xs-12">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="supplier-id">Material Supplied <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" id="mtrlsupplied" required="required" class="form-control col-md-7 col-xs-12">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="supplier-id">Quantity Supplied <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" id="mtrlsupplied" required="required" class="form-control col-md-7 col-xs-12">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ph-no">Material Cost <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="number" id="mtrlcost" required="required" class="form-control col-md-7 col-xs-12">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Date Supplied <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="date" id="datesupplied" required="required" class="form-control col-md-7 col-xs-12">
-                                            </div>
-                                        </div>
-
-                                        <div class="ln_solid"></div>
-                                        <div class="form-group">
-                                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                                <button type="submit" class="btn btn-primary">Cancel</button>
-                                                <button type="submit" name = "submit" class="btn btn-success">Submit</button>
-                                            </div>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
 
 
 
 
 
 
-
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>List of Suppliers</h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-
-                                        <li><a href="#"><i class="fa fa-close"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-                                    <p class="text-muted font-13 m-b-30">
-                                        Below is a list of all registered suppliers.
-                                    </p>
-                                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                                        <thead>
-                                        <tr>
-                                            <th>Supplier ID</th>
-                                            <th>Supplier Name</th>
-                                            <th>Material Supplied</th>
-                                            <th>Quantity Supplied</th>
-                                            <th>Cost of Material</th>
-                                            <th>Phone Number</th>
-                                            <th>Email</th>
-                                            <th>Date Registered </th>
-
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                        //set up mysql connection
-
-                                        // Retrieve all the data from the "tblstudent" table
-                                        $result = oci_parse($connect, "SELECT * FROM tblsuppliers");
-                                        oci_execute($result);
-                                        // store the record of the "tblstudent" table into $row
-
-                                        while($row = oci_fetch_array($result)){
-                                            // Print out the contents of the entry
-                                            echo '<tr>';
-                                            echo '<td>'.$row[0].'</td>';
-                                            echo '<td>'.$row[1].'</td>';
-                                            echo '<td>'.$row[2].'</td>';
-                                            echo '<td>'.$row[3].'</td>';
-                                            echo '<td>'.$row[4].'</td>';
-                                            echo '<td>'.$row[5].'</td>';
-                                            echo '<td>'.$row[6].'</td>';
-                                            echo '<td>'.$row[7].'</td>';
-                                        }
-
-                                        ?>
-                                        </tr>
-
-
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
-                        </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Material Supplied</h2>
+                                <h2>List of Market Agents</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -451,17 +316,16 @@ include "database.php";
                             </div>
                             <div class="x_content">
                                 <p class="text-muted font-13 m-b-30">
-                                    Below is a list of all materials supplied.
+                                    Below is a list of all registered market agents.
                                 </p>
                                 <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                                     <thead>
                                     <tr>
-                                        <th>Supplier Name</th>
-                                        <th>Material ID</th>
-                                        <th>Material Supplied</th>
-                                        <th>Quantity Supplied</th>
-                                        <th>Material Cost</th>
-                                        <th>Date Supplied</th>
+                                        <th>Agent ID</th>
+                                        <th>Agent Name</th>
+                                        <th>Phone Number</th>
+                                        <th>Email Address</th>
+                                        <th>Date Registered</th>
 
                                     </tr>
                                     </thead>
@@ -470,7 +334,7 @@ include "database.php";
                                     //set up mysql connection
 
                                     // Retrieve all the data from the "tblstudent" table
-                                    $result = oci_parse($connect, "SELECT * FROM tblsuppliers");
+                                    $result = oci_parse($connect, "SELECT * FROM tblclients");
                                     oci_execute($result);
                                     // store the record of the "tblstudent" table into $row
 
@@ -482,7 +346,6 @@ include "database.php";
                                         echo '<td>'.$row[2].'</td>';
                                         echo '<td>'.$row[3].'</td>';
                                         echo '<td>'.$row[4].'</td>';
-                                        echo '<td>'.$row[5].'</td>';
 
                                     }
 
@@ -496,120 +359,64 @@ include "database.php";
                             </div>
                         </div>
                     </div>
-
-                        </div>
-                    </div>
                 </div>
-
-                <!-- footer content -->
-                <footer>
-                    <div class="pull-right">
-                        <img src = "images/picsq.png" height="40" width = "40"> Majengo Cooperative Society by <img src = "images/ochomoswill3.png" height="40" width = "40"> <i>Ochomoswill Incorporated.</i></img>
-                    </div>
-                    <div class="clearfix"></div>
-                </footer>
-                <!-- /footer content -->
-
             </div>
-            <!-- /page content -->
+
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    <img src = "images/picsq.png" height="40" width = "40"> Majengo Cooperative Society by <img src = "images/ochomoswill3.png" height="40" width = "40"> <i>Ochomoswill Incorporated.</i></img>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+
         </div>
-
+        <!-- /page content -->
     </div>
 
-    <div id="custom_notifications" class="custom-notifications dsp_none">
-        <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-        </ul>
-        <div class="clearfix"></div>
-        <div id="notif-group" class="tabbed_notifications"></div>
-    </div>
+</div>
 
-    <script src="js/bootstrap.min.js"></script>
+<div id="custom_notifications" class="custom-notifications dsp_none">
+    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
+    </ul>
+    <div class="clearfix"></div>
+    <div id="notif-group" class="tabbed_notifications"></div>
+</div>
 
-    <!-- bootstrap progress js -->
-    <script src="js/progressbar/bootstrap-progressbar.min.js"></script>
-    <!-- icheck -->
-    <script src="js/icheck/icheck.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
-    <script src="js/custom.js"></script>
+<!-- bootstrap progress js -->
+<script src="js/progressbar/bootstrap-progressbar.min.js"></script>
+<!-- icheck -->
+<script src="js/icheck/icheck.min.js"></script>
 
-
-    <!-- Datatables -->
-    <!-- <script src="js/datatables/js/jquery.dataTables.js"></script>
-      <script src="js/datatables/tools/js/dataTables.tableTools.js"></script> -->
-
-    <!-- Datatables-->
-    <script src="js/datatables/jquery.dataTables.min.js"></script>
-    <script src="js/datatables/dataTables.bootstrap.js"></script>
-    <script src="js/datatables/dataTables.buttons.min.js"></script>
-    <script src="js/datatables/buttons.bootstrap.min.js"></script>
-    <script src="js/datatables/jszip.min.js"></script>
-    <script src="js/datatables/pdfmake.min.js"></script>
-    <script src="js/datatables/vfs_fonts.js"></script>
-    <script src="js/datatables/buttons.html5.min.js"></script>
-    <script src="js/datatables/buttons.print.min.js"></script>
-    <script src="js/datatables/dataTables.fixedHeader.min.js"></script>
-    <script src="js/datatables/dataTables.keyTable.min.js"></script>
-    <script src="js/datatables/dataTables.responsive.min.js"></script>
-    <script src="js/datatables/responsive.bootstrap.min.js"></script>
-    <script src="js/datatables/dataTables.scroller.min.js"></script>
+<script src="js/custom.js"></script>
 
 
-    <!-- pace -->
-    <script src="js/pace/pace.min.js"></script>
-    <script>
-        var handleDataTableButtons = function() {
-                "use strict";
-                0 !== $("#datatable-buttons").length && $("#datatable-buttons").DataTable({
-                    dom: "Bfrtip",
-                    buttons: [{
-                        extend: "copy",
-                        className: "btn-sm"
-                    }, {
-                        extend: "csv",
-                        className: "btn-sm"
-                    }, {
-                        extend: "excel",
-                        className: "btn-sm"
-                    }, {
-                        extend: "pdf",
-                        className: "btn-sm"
-                    }, {
-                        extend: "print",
-                        className: "btn-sm"
-                    }],
-                    responsive: !0
-                })
-            },
-            TableManageButtons = function() {
-                "use strict";
-                return {
-                    init: function() {
-                        handleDataTableButtons()
-                    }
-                }
-            }();
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#datatable').dataTable();
-            $('#datatable-keytable').DataTable({
-                keys: true
-            });
-            $('#datatable-responsive').DataTable();
-            $('#datatable-scroller').DataTable({
-                ajax: "js/datatables/json/scroller-demo.json",
-                deferRender: true,
-                scrollY: 380,
-                scrollCollapse: true,
-                scroller: true
-            });
-            var table = $('#datatable-fixed-header').DataTable({
-                fixedHeader: true
-            });
-        });
-        TableManageButtons.init();
-    </script>
+<!-- Datatables -->
+<!-- <script src="js/datatables/js/jquery.dataTables.js"></script>
+  <script src="js/datatables/tools/js/dataTables.tableTools.js"></script> -->
 
+<!-- Datatables-->
+<script src="js/datatables/jquery.dataTables.min.js"></script>
+<script src="js/datatables/dataTables.bootstrap.js"></script>
+<script src="js/datatables/dataTables.buttons.min.js"></script>
+<script src="js/datatables/buttons.bootstrap.min.js"></script>
+<script src="js/datatables/jszip.min.js"></script>
+<script src="js/datatables/pdfmake.min.js"></script>
+<script src="js/datatables/vfs_fonts.js"></script>
+<script src="js/datatables/buttons.html5.min.js"></script>
+<script src="js/datatables/buttons.print.min.js"></script>
+<script src="js/datatables/dataTables.fixedHeader.min.js"></script>
+<script src="js/datatables/dataTables.keyTable.min.js"></script>
+<script src="js/datatables/dataTables.responsive.min.js"></script>
+<script src="js/datatables/responsive.bootstrap.min.js"></script>
+<script src="js/datatables/dataTables.scroller.min.js"></script>
+
+
+<!-- pace -->
+<script src="js/pace/pace.min.js"></script>
 <script>
     var handleDataTableButtons = function() {
             "use strict";
@@ -642,27 +449,29 @@ include "database.php";
                 }
             }
         }();
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#datatable').dataTable();
-            $('#datatable-keytable').DataTable({
-                keys: true
-            });
-            $('#datatable-responsive').DataTable();
-            $('#datatable-scroller').DataTable({
-                ajax: "js/datatables/json/scroller-demo.json",
-                deferRender: true,
-                scrollY: 380,
-                scrollCollapse: true,
-                scroller: true
-            });
-            var table = $('#datatable-fixed-header').DataTable({
-                fixedHeader: true
-            });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#datatable').dataTable();
+        $('#datatable-keytable').DataTable({
+            keys: true
         });
-        TableManageButtons.init();
-    </script>
+        $('#datatable-responsive').DataTable();
+        $('#datatable-scroller').DataTable({
+            ajax: "js/datatables/json/scroller-demo.json",
+            deferRender: true,
+            scrollY: 380,
+            scrollCollapse: true,
+            scroller: true
+        });
+        var table = $('#datatable-fixed-header').DataTable({
+            fixedHeader: true
+        });
+    });
+    TableManageButtons.init();
+
+</script>
+
 </body>
 
 </html>

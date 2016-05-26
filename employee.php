@@ -213,7 +213,7 @@ include "database.php";
                 <div class="page-title">
                     <div class="title_left">
                         <h3>
-                            Client Details
+                            Employee Details
 
                         </h3>
                     </div>
@@ -227,7 +227,7 @@ include "database.php";
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Client Registration.<small></small></h2>
+                                <h2>Employee Registration.<small></small></h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -240,138 +240,86 @@ include "database.php";
                             <div class="x_content">
                                 <br />
 
-                                <!--Client Registration form-->
+                                <!--Employee Registration form-->
                                 <form method="POST"  id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                                     <div id="msgSubmit" class="h3 text-center hidden">Registration Successful!</div>
 
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Client Category</label>
-                                        <div class="col-md-3 col-sm-3 col-xs-12" >
-                                            <select class="form-control" name="client_category">
-                                                <option value = "Choose Category">Choose Category</option>
-                                                <option value = "National Government">National Government</option>
-                                                <option value = "County Government">County Government</option>
-                                                <option value = "Private">Private</option>
-                                                <option value = "Parastatal">Parastatal</option>
-                                                <option value = "Non Government Organisation">Non Government Organisation</option>
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="idno">ID Number <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" id="idno" required="required" class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="emp-id">Employee ID <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" id="emp-id" required="required" class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Employee Name</label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md- col-sm-3 3col-xs-12">
+                                            <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Occupation</label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <select class="form-control">
+                                                <option>Choose occupation</option>
+                                                <option>Architect</option>
+                                                <option>Electrical Engineer</option>
+                                                <option>Civil Engineer</option>
+                                                <option>Quantity Surveyor</option>
+                                                <option>Storekeeper</option>
+                                                <option>Project Manager</option>
                                             </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="client-id">Client ID <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" name ="client_id" id="client-id" required="required" class="form-control col-md-7 col-xs-12">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="client-name">Client Name <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="client-name" name = "client_name" required="required" class="form-control col-md-7 col-xs-12">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Registration <span class="required">*</span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type = "date" name = "date_Reg" id="dateReg"  required="required" >
+                                            <input id="dateReg" type = "date" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ph-no">Phone Number <span class="required">*</span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" name = "phone" id="ph-no" required="required" class="form-control col-md-7 col-xs-12">
+                                            <input type="text" id="ph-no" required="required" class="form-control col-md-7 col-xs-12">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email Address <span class="required">*</span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="email" name = "email" required="required" class="form-control col-md-7 col-xs-12">
+                                            <input type="text" id="email" required="required" class="form-control col-md-7 col-xs-12">
                                         </div>
                                     </div>
                                     <div class="ln_solid"></div>
                                     <div class="form-group">
                                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                            <button type="reset" class="btn btn-primary">Cancel</button>
-                                            <button type="submit" name= "submit" class="btn btn-success">Submit</button>
+                                            <button type="submit" class="btn btn-primary">Cancel</button>
+                                            <button type="submit" name = "submit" class="btn btn-success">Submit</button>
                                         </div>
                                     </div>
-
                                 </form>
                             </div>
                         </div>
-                        </div>
 
-
-                        <!--Client Payment Form-->
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Client Payments.<small></small></h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-
-                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-                                    <br />
-
-                                    <!--Client Registration form-->
-                                    <form method="POST"  id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-                                        <div id="msgSubmit" class="h3 text-center hidden">Registration Successful!</div>
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="idno">Payment ID <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-3 col-sm-3 col-xs-12">
-                                                <input type="text" id="paymentid" required="required" class="form-control col-md-7 col-xs-12">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="wkr-id">Client ID <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-3 col-sm-3 col-xs-12">
-                                                <input type="text" id="client-id" required="required" class="form-control col-md-7 col-xs-12">
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Amount Paid <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-3 col-sm-3 col-xs-12">
-                                                <input id="amount_paid" type = "number"  required="required" >
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" >Date of Payment <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-3 col-sm-3 col-xs-12">
-                                                <input type="date" id="date_payment" required="required" class="form-control col-md-7 col-xs-12">
-                                            </div>
-                                        </div>
-                                        <div class="ln_solid"></div>
-                                        <div class="form-group">
-                                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                                <button type="submit" class="btn btn-primary">Cancel</button>
-                                                <button type="submit" name = "submit" class="btn btn-success">Submit</button>
-                                            </div>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-                            </div>
 
 
 
@@ -381,7 +329,7 @@ include "database.php";
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>List of Clients</h2>
+                                    <h2>List of Employees</h2>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                         </li>
@@ -393,14 +341,16 @@ include "database.php";
                                 </div>
                                 <div class="x_content">
                                     <p class="text-muted font-13 m-b-30">
-                                        Below is a list of all registered clients.
+                                        Below is a list of all registered employees.
                                     </p>
                                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                                         <thead>
                                         <tr>
-                                            <th>Client Category</th>
-                                            <th>Client ID</th>
-                                            <th>Client Name</th>
+                                            <th>ID Number</th>
+                                            <th>Employee ID</th>
+                                            <th>Employee Name</th>
+                                            <th>Date of Birth</th>
+                                            <th>Occupation</th>
                                             <th>Date of Registration</th>
                                             <th>Phone Number</th>
                                             <th>Email Address</th>
@@ -412,7 +362,7 @@ include "database.php";
                                         //set up mysql connection
 
                                         // Retrieve all the data from the "tblstudent" table
-                                        $result = oci_parse($connect, "SELECT * FROM tblclients");
+                                        $result = oci_parse($connect, "SELECT * FROM tblemployees");
                                         oci_execute($result);
                                         // store the record of the "tblstudent" table into $row
 
@@ -425,6 +375,8 @@ include "database.php";
                                             echo '<td>'.$row[3].'</td>';
                                             echo '<td>'.$row[4].'</td>';
                                             echo '<td>'.$row[5].'</td>';
+                                            echo '<td>'.$row[6].'</td>';
+                                            echo '<td>'.$row[7].'</td>';
                                         }
 
                                         ?>
@@ -436,67 +388,6 @@ include "database.php";
 
                                 </div>
                             </div>
-                        </div>
-
-
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="x_panel">
-                                    <div class="x_title">
-                                        <h2>Client Payment details</h2>
-                                        <ul class="nav navbar-right panel_toolbox">
-                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                            </li>
-
-                                            <li><a href="#"><i class="fa fa-close"></i></a>
-                                            </li>
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="x_content">
-                                        <p class="text-muted font-13 m-b-30">
-                                            Below is a list of all registered client payments.
-                                        </p>
-                                        <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                                            <thead>
-                                            <tr>
-                                                <th>Payment ID</th>
-                                                <th>Client ID</th>
-                                                <th>Amount Paid</th>
-                                                <th>Date of Payment</th>
-
-
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <?php
-                                            //set up mysql connection
-
-                                            // Retrieve all the data from the "tblstudent" table
-                                            $result = oci_parse($connect, "SELECT * FROM tblclients");
-                                            oci_execute($result);
-                                            // store the record of the "tblstudent" table into $row
-
-                                            while($row = oci_fetch_array($result)){
-                                                // Print out the contents of the entry
-                                                echo '<tr>';
-                                                echo '<td>'.$row[0].'</td>';
-                                                echo '<td>'.$row[1].'</td>';
-                                                echo '<td>'.$row[2].'</td>';
-                                                echo '<td>'.$row[3].'</td>';
-
-                                            }
-
-                                            ?>
-                                            </tr>
-
-
-                                            </tbody>
-                                        </table>
-
-                                    </div>
-                                </div>
-
-
                         </div>
                     </div>
                 </div>

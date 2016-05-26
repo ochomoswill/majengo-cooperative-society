@@ -74,7 +74,7 @@ include "database.php"
                         <div class="clearfix"></div>
                         <br />
                         <div>
-                            <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Majengo Cooperative Society!</h1>
+                            <h1><img src = "images/picsq.png" height="40" width = "40">  Majengo Cooperative Society!</h1>
 
                             <p>©2015 All Rights Reserved. Privacy and Terms</p>
                         </div>
@@ -114,7 +114,7 @@ include "database.php"
                         <div class="clearfix"></div>
                         <br />
                         <div>
-                            <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Majengo Cooperative Society!</h1>
+                            <h1><img src = "images/picsq.png" height="40" width = "40"> Majengo Cooperative Society!</h1>
 
                             <p>©2015 All Rights Reserved. Privacy and Terms</p>
                         </div>
@@ -134,32 +134,37 @@ include "database.php"
 <!--php code for log in-->
 <?php
 
+include ('database.php');
+
 if(isset($_POST['login'])) {
     $username = $_POST['user'];
     $password = $_POST['pwd'];
 
     if ($username && $password) {
-        $query = mysqli_query($connect,"SELECT * FROM (tblLogin) WHERE username = '$username'");
-
-        $num_rows = mysqli_num_rows($query);
-
-        if ($num_rows != 0) {
-            while ($row = mysqli_fetch_assoc($query)) {
-                $db_username = $row['username'];
-                $db_password = $row['password'];
-            }
-
-            if ($username == $db_username && $password == $db_password) {
-
-                echo "<script>window.open('home.php','_self')</script>";
-                $_SESSION['username'] = $db_username;
-
-            } else
-                echo "<center>Incorrect password!</center>";
-        } else {
-            die("<center>That user doesn't exist!</center>");
-        }
+        $stid = oci_parse($connect,"SELECT * FROM tblLogin WHERE USER_NAME = '$username' AND USER_PWD = '$password'");
+		oci_execute($stid);
+		
+		if(($row = oci_fetch_array($stid, OCI_NUM)) != false)
+		{
+			
+			//if($row[0] >=0 or $row[0] <= 10)
+				//if($row[0] >= 0)
+			//{
+				echo "<script>window.open('home.php','_self')</script>";
+                $_SESSION['username'] = $username;
+			//}
+			//else
+			//{
+				//echo "Please enter the correct credentials";
+			//}
+		}
+		else
+			{
+				echo "<center>Please enter the correct credentials</center>";
+			}
+        
     } else
+		
         die("<center>Please enter Username and Password!</center>");
 }
 ?>
@@ -177,7 +182,8 @@ if(isset($_POST['signup']))
 
     if($user_pwd == $user_cpwd)
     {
-        $query = mysqli_query($connect,"INSERT INTO tblLogin (username, email, password)VALUES('$user_name','$email','$user_pwd')");
+        $query = oci_parse($connect,"INSERT INTO tblLogin (user_name, email, user_pwd)VALUES('$user_name','$email','$user_pwd')");
+		oci_execute($query);
         echo "<center>Registration successful!</center>";
     }
     else
