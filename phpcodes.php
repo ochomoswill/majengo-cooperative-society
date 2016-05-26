@@ -57,16 +57,10 @@ if(isset($_POST['login'])) {
         if(($row = oci_fetch_array($stid, OCI_NUM)) != false)
         {
 
-            //if($row[0] >=0 or $row[0] <= 10)
-            //if($row[0] >= 0)
-            //{
+            
             echo "<script>window.open('home.php','_self')</script>";
             $_SESSION['username'] = $username;
-            //}
-            //else
-            //{
-            //echo "Please enter the correct credentials";
-            //}
+            
         }
         else
         {
